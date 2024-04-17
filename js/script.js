@@ -22,7 +22,7 @@ const pause = () => {
     clearInterval(stopwatchInterval);
 }
 
-const sto = () => {
+const stop = () => {
     secondsSphere.style.transform = 'rotate(-90deg) translateX(60px)';
     secondsSphere.style.animation = 'none';
     playPauseButton.classList.remove('running');
