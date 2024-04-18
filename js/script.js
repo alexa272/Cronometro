@@ -1,10 +1,14 @@
+// Elementos HTML 
+
 const stopwatch = document.getElementById('stopwatch');
 const playPauseButton = document.getElementById('play-pause');
 const secondsSphere = document.getElementById('seconds-sphere');
 
+// Declaración de Variables
 let stopwatchInterval;
 let runningTime = 0;
 
+//Configuración de botón de play
 const playPause = () => {
     const isPaused = !playPauseButton.classList.contains('running');
     if (isPaused) {
@@ -17,6 +21,7 @@ const playPause = () => {
 
 }
 
+//Configuración de botón de pausa
 const pause = () => {
     secondsSphere.style.animationPlayState = 'paused';
     clearInterval(stopwatchInterval);
@@ -31,6 +36,7 @@ const stop = () => {
     stopwatch.textContent = '00:00';
 }
 
+//Configuración de botón de inicio
 const start = () => {
     secondsSphere.style.animation = 'rotacion 60s linear infinite';
     let startTime = Date.now() - runningTime;
@@ -41,6 +47,7 @@ const start = () => {
     }, 1000)
 }
 
+//Configuración de funcionamiento de cronometro
 const calculateTime = runningTime => {
     const total_seconds = Math.floor(runningTime / 1000);
     const total_minutes = Math.floor(total_seconds / 60);
