@@ -1,75 +1,90 @@
+/*
+  Archivo CSS principal para sitio web
+
+  Este archivo contiene estilos CSS para los elementos comunes del sitio,
+  como la tipografía, los colores y el diseño general.
+*/
+
+/* Tipografía */
 main{
-    font-family: "Roboto Mono", monospace;
-    position: relative;
+    font-family: "Roboto Mono", monospace; /* Fuente predeterminada para el cuerpo del texto */
+    position: relative; /* se Posiciona los elementos en relación con su posición normal*/
 }
 
+/* Diseño general de cronometro */
 .circle {
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    border: 1px solid #fff;
-    color: #fff;
-    margin: 50px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    width: 120px; /* Ancho de cronometro*/ 
+    height: 120px; /* Alto de cronometro*/
+    border: 1px solid #fff; /* borde de circulo donde van los segundos*/
+    color: #fff;  /* Color de fondo de cronometro */
+    margin: 50px auto; /* Definición de Margen Exterior */
+    display: flex; /* permite manipular alineación, espaciado y orden de los elementos */
+    justify-content: center; /* Define la distribucion dentro del navegador de los elementos dentro del flex*/
+    align-items: center; /* Centra los elementos verticalmente en el centro del contenedor*/
+    flex-direction: column; /* Establece la dirección del eje principal de un contenedor flexible*/
 }
 
+/* Diseño general de cronometro */
 .circle::before {
-    content: '';
-    border-radius: 50%;
-    z-index: -1;
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    left: calc(50% - 80px);
-    top: calc(50% - 80px);
-    background-color: #1d1d1d;
+    content: ''; /* Reemplaza el contenido con un valor generado, en este caso por un espacio vacio */
+    border-radius: 50%; /* Permite crear bordes redondeados*/
+    z-index: -1; /* Se utiliza para darle profundidad a los elementos HTML*/
+    position: absolute; /* Se posiciona automáticamente en la esquina superior izquierda de su elemento padre*/
+    width: 160px; /* Ancho de circulo del segundero del cronometro*/ 
+    height: 160px; /* Alto de circulo del segundero del cronometro*/ 
+    left: calc(50% - 80px); /* Determina la distancia entre el margen izquierdo del elemento */
+    top: calc(50% - 80px); /* Especifica la posición vertical de un elemento posicionado*/
+    background-color: #1d1d1d;  /* Color de fondo de cronometro */
 }
 
+/* Diseño general de cronometro */
 .seconds-sphere {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #fff;
-    position: absolute;
-    left: calc(50% - 10px);
-    top: calc(50% - 10px);
-    animation: rotation 60s linear infinite;
-    animation-play-state: paused;
+    width: 20px; /* Ancho del segundero del cronometro*/
+    height: 20px; /* Alto del segundero del cronometro*/
+    border-radius: 50%; /* Permite crear bordes redondeados*/
+    background-color: #fff;  /* Color de fondo para esfera del segundero */
+    position: absolute; /* Se posiciona automáticamente en la esquina superior izquierda de su elemento padre*/
+    left: calc(50% - 10px); /* Determina la distancia entre el margen izquierdo del elemento */
+    top: calc(50% - 10px); /* Especifica la posición vertical de un elemento posicionado*/
+    animation: rotation 60s linear infinite; /* la rotación de la animación se repetirá indefinidamente */
+    animation-play-state: paused; /* Determina que la animación está en pausa.*/
 }
 
+/* Diseño general de cronometro */
 @keyframes rotation {
-    from { transform: rotate(-90deg) translate(60px); }
-    to { transform: rotate(270deg) translate(60px); } 
+    from { transform: rotate(-90deg) translate(60px); }/* Define el angulo de rotacion y traslacion del objeto*/
+    to { transform: rotate(270deg) translate(60px); } /* Define el angulo de rotacion y traslacion del objeto*/
 }
 
+/* Diseño general de botones de stop y play */
 .buttons {
-    margin-top: 10px;
-    display: inline-flex;
+    margin-top: 10px; /* Definición de Margen Exterior superior del objeto */
+    display: inline-flex; /* Indica que el contenedor estará en una línea */
 }
 
+/* Diseño general de botón de play */
 .paused {
-    height: 10px;
-    border-width: 5px 0 5px 10px;
-    cursor: pointer;
-    box-sizing: border-box;
-    margin-left: 15px;
-    border-color: transparent transparent transparent #fff;
-    transition: 100ms all ease;
-    will-change: border-width;
-    border-style: solid;
+    height: 10px; /* Indica Alto de boton pausa */
+    border-width: 5px 0 5px 10px; /* Controla el grosor de los bordes que rodean un elemento */
+    cursor: pointer; /* controla la apariencia del cursor del mouse cuando pasa sobre un elemento específico en una página web. */
+    box-sizing: border-box; /* calcula el ancho y alto total de un elemento*/
+    margin-left: 15px; /* calcula el margen exterior izquierda del elemento */
+    border-color: transparent transparent transparent #fff; /* Color de borde del elemento*/
+    transition: 100ms all ease; /* Define un efecto de transición con un comienzo lento, luego rápido y finalmente termina lento*/
+    will-change: border-width; /*define el ancho del borde.*/
+    border-style: solid; /*establece el estilo de línea para los cuatro lados del borde de un elemento */
 }
 
 .running {
-    border-style: double;
-    border-width: 0 0 0 10px;
+    border-style: double; /* Establece que dos líneas paralelas rodean un elemento */
+    border-width: 0 0 0 10px; /* Controla el grosor de los bordes que rodean un elemento */
 }
 
+/* Diseño general de botón de stop */
 .stop {
-    background-color: #fff;
-    height: 10px;
-    width: 10px;
-    cursor: pointer;
+    background-color: #fff;  /* Color de fondo para botón */
+    height: 10px; /* Alto del boton de stop */
+    width: 10px; /* Ancho del boton de stop */
+    cursor: pointer; /* controla la apariencia del cursor del mouse cuando pasa sobre un elemento específico en una página web. */
 }
